@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Kicker &#8212; Visual Pinball  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/style/style.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Gate" href="gate.html" />
+    <link rel="prev" title="Light" href="light.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../vbs-apiindex.html" title="API Index"
+             >api</a> |</li>
+        <li class="right" >
+          <a href="gate.html" title="Gate"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="light.html" title="Light"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Visual Pinball  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Scripting API</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Kicker</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="kicker">
+<h1>Kicker<a class="headerlink" href="#kicker" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#description" id="id1">Description</a></p></li>
+<li><p><a class="reference internal" href="#api-reference" id="id2">API reference</a></p></li>
+</ul>
+</div>
+<section id="description">
+<h2><a class="toc-backref" href="#id1">Description</a><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A kicker object can capture balls and impart forces (kick) them. In Visual Pinball, kickers can also create and destroy
+balls.</p>
+</section>
+<section id="api-reference">
+<h2><a class="toc-backref" href="#id2">API reference</a><a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<dl class="vbs class">
+<dt class="sig sig-object vbs" id="vbs-Kicker">
+<em class="property"><span class="pre">Class</span> </em><span class="sig-name descname"><span class="pre">Kicker</span></span><a class="headerlink" href="#vbs-Kicker" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-Name" title="vbs-Kicker-Name">Name</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-TimerEnabled" title="vbs-Kicker-TimerEnabled">TimerEnabled</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-TimerInterval" title="vbs-Kicker-TimerInterval">TimerInterval</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-X" title="vbs-Kicker-X">X</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-Y" title="vbs-Kicker-Y">Y</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-Enabled" title="vbs-Kicker-Enabled">Enabled</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-DrawStyle" title="vbs-Kicker-DrawStyle">DrawStyle</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-Material" title="vbs-Kicker-Material">Material</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-Surface" title="vbs-Kicker-Surface">Surface</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-UserValue" title="vbs-Kicker-UserValue">UserValue</a></span></td>
+<td><p>Variable that scripts can store arbitrary values in. </p></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-Scatter" title="vbs-Kicker-Scatter">Scatter</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-HitAccuracy" title="vbs-Kicker-HitAccuracy">HitAccuracy</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-HitHeight" title="vbs-Kicker-HitHeight">HitHeight</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-Orientation" title="vbs-Kicker-Orientation">Orientation</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-Radius" title="vbs-Kicker-Radius">Radius</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-FallThrough" title="vbs-Kicker-FallThrough">FallThrough</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-Legacy" title="vbs-Kicker-Legacy">Legacy</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-LastCapturedBall" title="vbs-Kicker-LastCapturedBall">LastCapturedBall</a></span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-CreateBall" title="vbs-Kicker-CreateBall">CreateBall</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-CreateSizedBall" title="vbs-Kicker-CreateSizedBall">CreateSizedBall</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-CreateSizedBallWithMass" title="vbs-Kicker-CreateSizedBallWithMass">CreateSizedBallWithMass</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-DestroyBall" title="vbs-Kicker-DestroyBall">DestroyBall</a></span></td>
+<td><p>Destorys the ball captured by the kicker. </p></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-Kick" title="vbs-Kicker-Kick">Kick</a></span></td>
+<td><p>Impart a force on the captured ball. </p></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-KickXYZ" title="vbs-Kicker-KickXYZ">KickXYZ</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-KickZ" title="vbs-Kicker-KickZ">KickZ</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-BallCntOver" title="vbs-Kicker-BallCntOver">BallCntOver</a></span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Event</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-Init" title="vbs-Kicker-Init">Init</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-Timer" title="vbs-Kicker-Timer">Timer</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-Hit" title="vbs-Kicker-Hit">Hit</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Kicker-Unhit" title="vbs-Kicker-Unhit">Unhit</a></span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dd><dl class="attribute simple">
+<dt id="vbs-Kicker-Name"><em class="property">Property </em><span class="sig-name descname">Name</span><em class="property">: </em>String</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Kicker-TimerEnabled"><em class="property">Property </em><span class="sig-name descname">TimerEnabled</span><em class="property">: </em>Boolean</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Kicker-TimerInterval"><em class="property">Property </em><span class="sig-name descname">TimerInterval</span><em class="property">: </em>Long</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Kicker-X"><em class="property">Property </em><span class="sig-name descname">X</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Kicker-Y"><em class="property">Property </em><span class="sig-name descname">Y</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Kicker-Enabled"><em class="property">Property </em><span class="sig-name descname">Enabled</span><em class="property">: </em>Boolean</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Kicker-DrawStyle"><em class="property">Property </em><span class="sig-name descname">DrawStyle</span><em class="property">: </em>KickerType</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Kicker-Material"><em class="property">Property </em><span class="sig-name descname">Material</span><em class="property">: </em>String</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Kicker-Surface"><em class="property">Property </em><span class="sig-name descname">Surface</span><em class="property">: </em>String</dt><dd></dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Kicker-UserValue"><em class="property">Property </em><span class="sig-name descname">UserValue</span><em class="property">: </em>Variant</dt><dd><p>Variable that scripts can store arbitrary values in. </p>
+<p>This variable is not read from or written to by Visual Pinball, it only exists for scripts to store their own data in. </p>
+</dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Kicker-Scatter"><em class="property">Property </em><span class="sig-name descname">Scatter</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Kicker-HitAccuracy"><em class="property">Property </em><span class="sig-name descname">HitAccuracy</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Kicker-HitHeight"><em class="property">Property </em><span class="sig-name descname">HitHeight</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Kicker-Orientation"><em class="property">Property </em><span class="sig-name descname">Orientation</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Kicker-Radius"><em class="property">Property </em><span class="sig-name descname">Radius</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Kicker-FallThrough"><em class="property">Property </em><span class="sig-name descname">FallThrough</span><em class="property">: </em>Boolean</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Kicker-Legacy"><em class="property">Property </em><span class="sig-name descname">Legacy</span><em class="property">: </em>Boolean</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Kicker-LastCapturedBall"><em class="property">Property </em><span class="sig-name descname">LastCapturedBall</span><em class="property">: </em>None<em class="property"> (Read-only)</em></dt><dd></dd>
+</dl>
+<dl class="method simple">
+<dt id="vbs-Kicker-CreateBall"><em class="property">Function </em><span class="sig-name descname">CreateBall</span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"></span></span>TODO TODO TODO</dt><dd></dd>
+</dl>
+<dl class="method simple">
+<dt id="vbs-Kicker-CreateSizedBall"><em class="property">Function </em><span class="sig-name descname">CreateSizedBall</span><span class="sig-paren">(</span><em class="sig-param"><span class="n">radius</span><em class="property">: </em>Single</em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"></span></span>TODO TODO TODO</dt><dd></dd>
+</dl>
+<dl class="method simple">
+<dt id="vbs-Kicker-CreateSizedBallWithMass"><em class="property">Function </em><span class="sig-name descname">CreateSizedBallWithMass</span><span class="sig-paren">(</span><em class="sig-param"><span class="n">radius</span><em class="property">: </em>Single</em>, <em class="sig-param"><span class="n">mass</span><em class="property">: </em>Single</em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"></span></span>TODO TODO TODO</dt><dd></dd>
+</dl>
+<dl class="method">
+<dt id="vbs-Kicker-DestroyBall"><em class="property">Function </em><span class="sig-name descname">DestroyBall</span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"></span></span>Integer</dt><dd><p>Destorys the ball captured by the kicker. </p>
+<p>This has no effect if the kicker hasn’t captured any ball</p>
+<p>Example of a kicker being used to implement a drain: <div class="highlight-vbscript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">Sub</span><span class="w"> </span><span class="nf">DrainKicker_Hit</span><span class="p">()</span><span class="w"></span>
+<span class="linenos">2</span><span class="w">    </span><span class="n">DrainKicker</span><span class="p">.</span><span class="n">DestroyBall</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">    </span><span class="c1">&#39; You may also want to play a sound effect, update a &quot;balls in play&quot; counter, spawn a new ball,</span><span class="w"></span>
+<span class="linenos">4</span><span class="w">    </span><span class="c1">&#39; etc.</span><span class="w"></span>
+<span class="linenos">5</span><span class="k">End</span><span class="w"> </span><span class="k">Sub</span><span class="w"></span>
+</pre></div>
+</div>
+</p>
+<p><strong>Returns:</strong><span><p>Number of balls destroyed (<code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code>) </p>
+</span></p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="vbs-Kicker-Kick"><em class="property">Sub </em><span class="sig-name descname">Kick</span><span class="sig-paren">(</span><em class="sig-param"><span class="n">angle</span><em class="property">: </em>Single</em>, <em class="sig-param"><span class="n">speed</span><em class="property">: </em>Single</em>, <em class="sig-param"><span class="n">inclination</span><em class="property">: </em>Single<em class="property"> = </em><span>0</span></em><span class="sig-paren">)</span></dt><dd><p>Impart a force on the captured ball. </p>
+<p>This has no effect if the kicker hasn’t captured any ball</p>
+<p><strong>Parameters:</strong><dl class="field-list">
+<span>
+<dt><span class="sig-name descname">angle</span></dt>
+</span><dd class="field-odd"><p>Angle to kick the ball out at, in degrees<span>
+<span><p><code class="docutils literal notranslate"><span class="pre">0</span></code> is towards the back of the table</p>
+</span><span><p><code class="docutils literal notranslate"><span class="pre">90</span></code> is towards the right</p>
+</span><span><p><code class="docutils literal notranslate"><span class="pre">180</span></code> is towards the front of the table</p>
+</span><span><p><code class="docutils literal notranslate"><span class="pre">270</span></code> is towards the left </p>
+</span></span></p>
+</dd>
+<span>
+<dt><span class="sig-name descname">speed</span></dt>
+</span><dd class="field-even"><p>The speed to kick out at </p>
+</dd>
+<span>
+<dt><span class="sig-name descname">inclination</span></dt>
+</span><dd class="field-odd"><p>Optional: defaults to <code class="docutils literal notranslate"><span class="pre">0</span></code> if not given<span>
+<span><p>TODO: Figure out what this does </p>
+</span></span></p>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+<dl class="method simple">
+<dt id="vbs-Kicker-KickXYZ"><em class="property">Sub </em><span class="sig-name descname">KickXYZ</span><span class="sig-paren">(</span><em class="sig-param"><span class="n">angle</span><em class="property">: </em>Single</em>, <em class="sig-param"><span class="n">speed</span><em class="property">: </em>Single</em>, <em class="sig-param"><span class="n">inclination</span><em class="property">: </em>Single</em>, <em class="sig-param"><span class="n">x</span><em class="property">: </em>Single</em>, <em class="sig-param"><span class="n">y</span><em class="property">: </em>Single</em>, <em class="sig-param"><span class="n">z</span><em class="property">: </em>Single</em><span class="sig-paren">)</span></dt><dd></dd>
+</dl>
+<dl class="method simple">
+<dt id="vbs-Kicker-KickZ"><em class="property">Sub </em><span class="sig-name descname">KickZ</span><span class="sig-paren">(</span><em class="sig-param"><span class="n">angle</span><em class="property">: </em>Single</em>, <em class="sig-param"><span class="n">speed</span><em class="property">: </em>Single</em>, <em class="sig-param"><span class="n">inclination</span><em class="property">: </em>Single</em>, <em class="sig-param"><span class="n">heightz</span><em class="property">: </em>Single</em><span class="sig-paren">)</span></dt><dd></dd>
+</dl>
+<dl class="method simple">
+<dt id="vbs-Kicker-BallCntOver"><em class="property">Function </em><span class="sig-name descname">BallCntOver</span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"></span></span>Integer</dt><dd></dd>
+</dl>
+<dl class="method simple">
+<dt id="vbs-Kicker-Init"><em class="property">Event </em><span class="sig-prename descclassname">ObjectName_</span><span class="sig-name descname">Init</span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt><dd></dd>
+</dl>
+<dl class="method simple">
+<dt id="vbs-Kicker-Timer"><em class="property">Event </em><span class="sig-prename descclassname">ObjectName_</span><span class="sig-name descname">Timer</span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt><dd></dd>
+</dl>
+<dl class="method simple">
+<dt id="vbs-Kicker-Hit"><em class="property">Event </em><span class="sig-prename descclassname">ObjectName_</span><span class="sig-name descname">Hit</span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt><dd></dd>
+</dl>
+<dl class="method simple">
+<dt id="vbs-Kicker-Unhit"><em class="property">Event </em><span class="sig-prename descclassname">ObjectName_</span><span class="sig-name descname">Unhit</span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt><dd></dd>
+</dl>
+</dd>
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Kicker</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#api-reference">API reference</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="light.html"
+                        title="previous chapter">Light</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gate.html"
+                        title="next chapter">Gate</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/kicker.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../vbs-apiindex.html" title="API Index"
+             >api</a> |</li>
+        <li class="right" >
+          <a href="gate.html" title="Gate"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="light.html" title="Light"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Visual Pinball  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Scripting API</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Kicker</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Visual Pinball development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>

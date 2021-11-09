@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Light &#8212; Visual Pinball  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/style/style.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Kicker" href="kicker.html" />
+    <link rel="prev" title="Trigger" href="trigger.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../vbs-apiindex.html" title="API Index"
+             >api</a> |</li>
+        <li class="right" >
+          <a href="kicker.html" title="Kicker"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="trigger.html" title="Trigger"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Visual Pinball  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Scripting API</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Light</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="light">
+<h1>Light<a class="headerlink" href="#light" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#description" id="id1">Description</a></p></li>
+<li><p><a class="reference internal" href="#api-reference" id="id2">API reference</a></p></li>
+</ul>
+</div>
+<section id="description">
+<h2><a class="toc-backref" href="#id1">Description</a><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</section>
+<section id="api-reference">
+<h2><a class="toc-backref" href="#id2">API reference</a><a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<dl class="vbs class">
+<dt class="sig sig-object vbs" id="vbs-Light">
+<em class="property"><span class="pre">Class</span> </em><span class="sig-name descname"><span class="pre">Light</span></span><a class="headerlink" href="#vbs-Light" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-Falloff" title="vbs-Light-Falloff">Falloff</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-FalloffPower" title="vbs-Light-FalloffPower">FalloffPower</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-State" title="vbs-Light-State">State</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-Color" title="vbs-Light-Color">Color</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-ColorFull" title="vbs-Light-ColorFull">ColorFull</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-TimerEnabled" title="vbs-Light-TimerEnabled">TimerEnabled</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-TimerInterval" title="vbs-Light-TimerInterval">TimerInterval</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-X" title="vbs-Light-X">X</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-Y" title="vbs-Light-Y">Y</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-BlinkPattern" title="vbs-Light-BlinkPattern">BlinkPattern</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-BlinkInterval" title="vbs-Light-BlinkInterval">BlinkInterval</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-Intensity" title="vbs-Light-Intensity">Intensity</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-TransmissionScale" title="vbs-Light-TransmissionScale">TransmissionScale</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-IntensityScale" title="vbs-Light-IntensityScale">IntensityScale</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-Surface" title="vbs-Light-Surface">Surface</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-Name" title="vbs-Light-Name">Name</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-UserValue" title="vbs-Light-UserValue">UserValue</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-Image" title="vbs-Light-Image">Image</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-ImageMode" title="vbs-Light-ImageMode">ImageMode</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-DepthBias" title="vbs-Light-DepthBias">DepthBias</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-FadeSpeedUp" title="vbs-Light-FadeSpeedUp">FadeSpeedUp</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-FadeSpeedDown" title="vbs-Light-FadeSpeedDown">FadeSpeedDown</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-Bulb" title="vbs-Light-Bulb">Bulb</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-ShowBulbMesh" title="vbs-Light-ShowBulbMesh">ShowBulbMesh</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-StaticBulbMesh" title="vbs-Light-StaticBulbMesh">StaticBulbMesh</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-ShowReflectionOnBall" title="vbs-Light-ShowReflectionOnBall">ShowReflectionOnBall</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-ScaleBulbMesh" title="vbs-Light-ScaleBulbMesh">ScaleBulbMesh</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-BulbModulateVsAdd" title="vbs-Light-BulbModulateVsAdd">BulbModulateVsAdd</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-BulbHaloHeight" title="vbs-Light-BulbHaloHeight">BulbHaloHeight</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-Visible" title="vbs-Light-Visible">Visible</a></span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-GetInPlayState" title="vbs-Light-GetInPlayState">GetInPlayState</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-GetInPlayStateBool" title="vbs-Light-GetInPlayStateBool">GetInPlayStateBool</a></span></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-Duration" title="vbs-Light-Duration">Duration</a></span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Event</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-Init" title="vbs-Light-Init">Init</a></span></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Light-Timer" title="vbs-Light-Timer">Timer</a></span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dd><dl class="attribute simple">
+<dt id="vbs-Light-Falloff"><em class="property">Property </em><span class="sig-name descname">Falloff</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-FalloffPower"><em class="property">Property </em><span class="sig-name descname">FalloffPower</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-State"><em class="property">Property </em><span class="sig-name descname">State</span><em class="property">: </em>LightState</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-Color"><em class="property">Property </em><span class="sig-name descname">Color</span><em class="property">: </em>OLE_COLOR</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-ColorFull"><em class="property">Property </em><span class="sig-name descname">ColorFull</span><em class="property">: </em>OLE_COLOR</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-TimerEnabled"><em class="property">Property </em><span class="sig-name descname">TimerEnabled</span><em class="property">: </em>Boolean</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-TimerInterval"><em class="property">Property </em><span class="sig-name descname">TimerInterval</span><em class="property">: </em>Long</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-X"><em class="property">Property </em><span class="sig-name descname">X</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-Y"><em class="property">Property </em><span class="sig-name descname">Y</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-BlinkPattern"><em class="property">Property </em><span class="sig-name descname">BlinkPattern</span><em class="property">: </em>String</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-BlinkInterval"><em class="property">Property </em><span class="sig-name descname">BlinkInterval</span><em class="property">: </em>Long</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-Intensity"><em class="property">Property </em><span class="sig-name descname">Intensity</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-TransmissionScale"><em class="property">Property </em><span class="sig-name descname">TransmissionScale</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-IntensityScale"><em class="property">Property </em><span class="sig-name descname">IntensityScale</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-Surface"><em class="property">Property </em><span class="sig-name descname">Surface</span><em class="property">: </em>String</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-Name"><em class="property">Property </em><span class="sig-name descname">Name</span><em class="property">: </em>String</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-UserValue"><em class="property">Property </em><span class="sig-name descname">UserValue</span><em class="property">: </em>Variant</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-Image"><em class="property">Property </em><span class="sig-name descname">Image</span><em class="property">: </em>String</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-ImageMode"><em class="property">Property </em><span class="sig-name descname">ImageMode</span><em class="property">: </em>Boolean</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-DepthBias"><em class="property">Property </em><span class="sig-name descname">DepthBias</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-FadeSpeedUp"><em class="property">Property </em><span class="sig-name descname">FadeSpeedUp</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-FadeSpeedDown"><em class="property">Property </em><span class="sig-name descname">FadeSpeedDown</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-Bulb"><em class="property">Property </em><span class="sig-name descname">Bulb</span><em class="property">: </em>Boolean</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-ShowBulbMesh"><em class="property">Property </em><span class="sig-name descname">ShowBulbMesh</span><em class="property">: </em>Boolean</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-StaticBulbMesh"><em class="property">Property </em><span class="sig-name descname">StaticBulbMesh</span><em class="property">: </em>Boolean</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-ShowReflectionOnBall"><em class="property">Property </em><span class="sig-name descname">ShowReflectionOnBall</span><em class="property">: </em>Boolean</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-ScaleBulbMesh"><em class="property">Property </em><span class="sig-name descname">ScaleBulbMesh</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-BulbModulateVsAdd"><em class="property">Property </em><span class="sig-name descname">BulbModulateVsAdd</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-BulbHaloHeight"><em class="property">Property </em><span class="sig-name descname">BulbHaloHeight</span><em class="property">: </em>Single</dt><dd></dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Light-Visible"><em class="property">Property </em><span class="sig-name descname">Visible</span><em class="property">: </em>Boolean</dt><dd></dd>
+</dl>
+<dl class="method simple">
+<dt id="vbs-Light-GetInPlayState"><em class="property">Function </em><span class="sig-name descname">GetInPlayState</span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"></span></span>LightState</dt><dd></dd>
+</dl>
+<dl class="method simple">
+<dt id="vbs-Light-GetInPlayStateBool"><em class="property">Function </em><span class="sig-name descname">GetInPlayStateBool</span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"></span></span>Boolean</dt><dd></dd>
+</dl>
+<dl class="method simple">
+<dt id="vbs-Light-Duration"><em class="property">Sub </em><span class="sig-name descname">Duration</span><span class="sig-paren">(</span><em class="sig-param"><span class="n">startState</span><em class="property">: </em>Long</em>, <em class="sig-param"><span class="n">newVal</span><em class="property">: </em>Long</em>, <em class="sig-param"><span class="n">endState</span><em class="property">: </em>Long</em><span class="sig-paren">)</span></dt><dd></dd>
+</dl>
+<dl class="method simple">
+<dt id="vbs-Light-Init"><em class="property">Event </em><span class="sig-prename descclassname">ObjectName_</span><span class="sig-name descname">Init</span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt><dd></dd>
+</dl>
+<dl class="method simple">
+<dt id="vbs-Light-Timer"><em class="property">Event </em><span class="sig-prename descclassname">ObjectName_</span><span class="sig-name descname">Timer</span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt><dd></dd>
+</dl>
+</dd>
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Light</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#api-reference">API reference</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="trigger.html"
+                        title="previous chapter">Trigger</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="kicker.html"
+                        title="next chapter">Kicker</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/light.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../vbs-apiindex.html" title="API Index"
+             >api</a> |</li>
+        <li class="right" >
+          <a href="kicker.html" title="Kicker"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="trigger.html" title="Trigger"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Visual Pinball  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Scripting API</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Light</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Visual Pinball development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>

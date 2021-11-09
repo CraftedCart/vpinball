@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Ball &#8212; Visual Pinball  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/style/style.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Collection" href="collection.html" />
+    <link rel="prev" title="Rubber" href="rubber.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../vbs-apiindex.html" title="API Index"
+             >api</a> |</li>
+        <li class="right" >
+          <a href="collection.html" title="Collection"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="rubber.html" title="Rubber"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Visual Pinball  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Scripting API</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Ball</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="ball">
+<h1>Ball<a class="headerlink" href="#ball" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#description" id="id1">Description</a></p></li>
+<li><p><a class="reference internal" href="#api-reference" id="id2">API reference</a></p></li>
+</ul>
+</div>
+<section id="description">
+<h2><a class="toc-backref" href="#id1">Description</a><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A ball on the table. Balls can be created with <code class="docutils literal notranslate"><span class="pre">Kicker.CreateBall</span></code> or <code class="docutils literal notranslate"><span class="pre">Plunger.CreateBall</span></code>, and destroyed with
+<code class="docutils literal notranslate"><span class="pre">Kicker.DestroyBall</span></code>, <code class="docutils literal notranslate"><span class="pre">Ball.DestroyBall</span></code>, or <code class="docutils literal notranslate"><span class="pre">Trigger.DestroyBall</span></code>.</p>
+<p>TODO: Hyperlink the various methods mentioned here</p>
+</section>
+<section id="api-reference">
+<h2><a class="toc-backref" href="#id2">API reference</a><a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<dl class="vbs class">
+<dt class="sig sig-object vbs" id="vbs-Ball">
+<em class="property"><span class="pre">Class</span> </em><span class="sig-name descname"><span class="pre">Ball</span></span><a class="headerlink" href="#vbs-Ball" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-X" title="vbs-Ball-X">X</a></span></td>
+<td><p>X position of the ball’s center. </p></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-Y" title="vbs-Ball-Y">Y</a></span></td>
+<td><p>Y position of the ball’s center. </p></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-VelX" title="vbs-Ball-VelX">VelX</a></span></td>
+<td><p>X velocity of the ball, in VP units per 10ms. </p></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-VelY" title="vbs-Ball-VelY">VelY</a></span></td>
+<td><p>Y velocity of the ball, in VP units per 10ms. </p></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-Z" title="vbs-Ball-Z">Z</a></span></td>
+<td><p>Z position of the ball’s center. </p></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-VelZ" title="vbs-Ball-VelZ">VelZ</a></span></td>
+<td><p>Z velocity of the ball, in VP units per 10ms. </p></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-AngVelX" title="vbs-Ball-AngVelX">AngVelX</a></span></td>
+<td><p>X angular velocity of the ball. </p></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-AngVelY" title="vbs-Ball-AngVelY">AngVelY</a></span></td>
+<td><p>Y angular velocity of the ball. </p></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-AngVelZ" title="vbs-Ball-AngVelZ">AngVelZ</a></span></td>
+<td><p>Z angular velocity of the ball. </p></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-AngMomX" title="vbs-Ball-AngMomX">AngMomX</a></span></td>
+<td><p>X angular momentum of the ball. </p></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-AngMomY" title="vbs-Ball-AngMomY">AngMomY</a></span></td>
+<td><p>Y angular momentum of the ball. </p></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-AngMomZ" title="vbs-Ball-AngMomZ">AngMomZ</a></span></td>
+<td><p>Z angular momentum of the ball. </p></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-Color" title="vbs-Ball-Color">Color</a></span></td>
+<td><p>Color tint for the ball. </p></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-Image" title="vbs-Ball-Image">Image</a></span></td>
+<td><p>Name of a texture on the ball that faces the camera. </p></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-FrontDecal" title="vbs-Ball-FrontDecal">FrontDecal</a></span></td>
+<td><p>Name of a texture on top of the ball’s <code class="docutils literal notranslate"><span class="pre">Image</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-DecalMode" title="vbs-Ball-DecalMode">DecalMode</a></span></td>
+<td><p>Whether the decal should be in “logo mode”. </p></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-UserValue" title="vbs-Ball-UserValue">UserValue</a></span></td>
+<td><p>Variable that scripts can store arbitrary values in. </p></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-Mass" title="vbs-Ball-Mass">Mass</a></span></td>
+<td><p>Mass of the ball. </p></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-Radius" title="vbs-Ball-Radius">Radius</a></span></td>
+<td><p>The radius of the ball. This is usually <code class="docutils literal notranslate"><span class="pre">25</span></code>. </p></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-ID" title="vbs-Ball-ID">ID</a></span></td>
+<td><p>ID of the ball. </p></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-Name" title="vbs-Ball-Name">Name</a></span></td>
+<td><p>Name of the ball. </p></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-BulbIntensityScale" title="vbs-Ball-BulbIntensityScale">BulbIntensityScale</a></span></td>
+<td><p>Multiplier for light source reflections on the ball. </p></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-ReflectionEnabled" title="vbs-Ball-ReflectionEnabled">ReflectionEnabled</a></span></td>
+<td><p>Whether the ball should reflect onto the playfield. </p></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-PlayfieldReflectionScale" title="vbs-Ball-PlayfieldReflectionScale">PlayfieldReflectionScale</a></span></td>
+<td><p>Multiplier for the playfield’s reflection on the ball. </p></td>
+</tr>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-ForceReflection" title="vbs-Ball-ForceReflection">ForceReflection</a></span></td>
+<td><p>Whether the ball should reflect onto the playfield even when above it (such as on a ramp or upper playfield) </p></td>
+</tr>
+<tr class="row-odd"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-Visible" title="vbs-Ball-Visible">Visible</a></span></td>
+<td><p>Whether the ball is visible. </p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><span class="sig-name descname"><a class="reference internal" href="#vbs-Ball-DestroyBall" title="vbs-Ball-DestroyBall">DestroyBall</a></span></td>
+<td><p>Destroys the table’s active ball. </p></td>
+</tr>
+</tbody>
+</table>
+<dd><dl class="attribute simple">
+<dt id="vbs-Ball-X"><em class="property">Property </em><span class="sig-name descname">X</span><em class="property">: </em>Single</dt><dd><p>X position of the ball’s center. </p>
+</dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Ball-Y"><em class="property">Property </em><span class="sig-name descname">Y</span><em class="property">: </em>Single</dt><dd><p>Y position of the ball’s center. </p>
+</dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Ball-VelX"><em class="property">Property </em><span class="sig-name descname">VelX</span><em class="property">: </em>Single</dt><dd><p>X velocity of the ball, in VP units per 10ms. </p>
+</dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Ball-VelY"><em class="property">Property </em><span class="sig-name descname">VelY</span><em class="property">: </em>Single</dt><dd><p>Y velocity of the ball, in VP units per 10ms. </p>
+</dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Ball-Z"><em class="property">Property </em><span class="sig-name descname">Z</span><em class="property">: </em>Single</dt><dd><p>Z position of the ball’s center. </p>
+</dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Ball-VelZ"><em class="property">Property </em><span class="sig-name descname">VelZ</span><em class="property">: </em>Single</dt><dd><p>Z velocity of the ball, in VP units per 10ms. </p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-AngVelX"><em class="property">Property </em><span class="sig-name descname">AngVelX</span><em class="property">: </em>Single</dt><dd><p>X angular velocity of the ball. </p>
+<p>Writing to this variable has no effect (and never did in the past), it’s only possible for legacy compatability.</p>
+<p><strong>Since version:</strong><span><p>10.4 </p>
+</span></p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-AngVelY"><em class="property">Property </em><span class="sig-name descname">AngVelY</span><em class="property">: </em>Single</dt><dd><p>Y angular velocity of the ball. </p>
+<p>Writing to this variable has no effect (and never did in the past), it’s only possible for legacy compatability.</p>
+<p><strong>Since version:</strong><span><p>10.4 </p>
+</span></p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-AngVelZ"><em class="property">Property </em><span class="sig-name descname">AngVelZ</span><em class="property">: </em>Single</dt><dd><p>Z angular velocity of the ball. </p>
+<p>Writing to this variable has no effect (and never did in the past), it’s only possible for legacy compatability.</p>
+<p><strong>Since version:</strong><span><p>10.4 </p>
+</span></p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-AngMomX"><em class="property">Property </em><span class="sig-name descname">AngMomX</span><em class="property">: </em>Single</dt><dd><p>X angular momentum of the ball. </p>
+<p><strong>Since version:</strong><span><p>10.4 </p>
+</span></p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-AngMomY"><em class="property">Property </em><span class="sig-name descname">AngMomY</span><em class="property">: </em>Single</dt><dd><p>Y angular momentum of the ball. </p>
+<p><strong>Since version:</strong><span><p>10.4 </p>
+</span></p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-AngMomZ"><em class="property">Property </em><span class="sig-name descname">AngMomZ</span><em class="property">: </em>Single</dt><dd><p>Z angular momentum of the ball. </p>
+<p><strong>Since version:</strong><span><p>10.4 </p>
+</span></p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-Color"><em class="property">Property </em><span class="sig-name descname">Color</span><em class="property">: </em>OLE_COLOR</dt><dd><p>Color tint for the ball. </p>
+<p>This defaults to <code class="docutils literal notranslate"><span class="pre">&amp;HFFFFFF</span></code> (pure white - <code class="docutils literal notranslate"><span class="pre">&amp;H</span></code> in Visual Basic is the prefix for a hexadecimal number).</p>
+<p>Example for creating a magenta ball: <div class="highlight-vbscript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">With</span><span class="w"> </span><span class="n">BallRelease</span><span class="p">.</span><span class="n">CreateBall</span><span class="w"></span>
+<span class="linenos">2</span><span class="w">    </span><span class="p">.</span><span class="n">Color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">&amp;HFF00FF</span><span class="w"></span>
+<span class="linenos">3</span><span class="k">End</span><span class="w"> </span><span class="k">With</span><span class="w"></span>
+</pre></div>
+</div>
+</p>
+<p>To convert a color into a format usable with <code class="docutils literal notranslate"><span class="pre">OLE_COLOR</span></code>, simply convert it into a hex code and prefix it with <code class="docutils literal notranslate"><span class="pre">&amp;H</span></code>. </p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-Image"><em class="property">Property </em><span class="sig-name descname">Image</span><em class="property">: </em>String</dt><dd><p>Name of a texture on the ball that faces the camera. </p>
+<p>This is often an image of a sphere reflecting the room around it.</p>
+<p>Images can be imported/manipulated in the <span>Table</span> &gt; Image Manager dialog. </p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-FrontDecal"><em class="property">Property </em><span class="sig-name descname">FrontDecal</span><em class="property">: </em>String</dt><dd><p>Name of a texture on top of the ball’s <code class="docutils literal notranslate"><span class="pre">Image</span></code></p>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">Image</span></code>, the decal spins with the ball.</p>
+<p>The default blank table has a scratches decal on the ball.</p>
+<p>Images can be imported/manipulated in the <span>Table</span> &gt; Image Manager dialog. </p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-DecalMode"><em class="property">Property </em><span class="sig-name descname">DecalMode</span><em class="property">: </em>Boolean</dt><dd><p>Whether the decal should be in “logo mode”. </p>
+<p>The default mode for newly created balls can be set with the “Logo mode” checkbox in the table options.</p>
+<p><strong>Since version:</strong><span><p>10.4 </p>
+</span></p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-UserValue"><em class="property">Property </em><span class="sig-name descname">UserValue</span><em class="property">: </em>Variant</dt><dd><p>Variable that scripts can store arbitrary values in. </p>
+<p>This variable is not read from or written to by Visual Pinball, it only exists for scripts to store their own data in. </p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-Mass"><em class="property">Property </em><span class="sig-name descname">Mass</span><em class="property">: </em>Single</dt><dd><p>Mass of the ball. </p>
+<p>This defaults to <code class="docutils literal notranslate"><span class="pre">1</span></code>. </p>
+</dd>
+</dl>
+<dl class="attribute simple">
+<dt id="vbs-Ball-Radius"><em class="property">Property </em><span class="sig-name descname">Radius</span><em class="property">: </em>Single</dt><dd><p>The radius of the ball. This is usually <code class="docutils literal notranslate"><span class="pre">25</span></code>. </p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-ID"><em class="property">Property </em><span class="sig-name descname">ID</span><em class="property">: </em>Integer</dt><dd><p>ID of the ball. </p>
+<p>Visual Pinball generates a unique ID every time a ball is created. While IDs are generally intended to be unique across balls, it is possible to set multiple balls to have the same ID from a script. </p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-Name"><em class="property">Property </em><span class="sig-name descname">Name</span><em class="property">: </em>String</dt><dd><p>Name of the ball. </p>
+<p>This defaults to <code class="docutils literal notranslate"><span><span class="pre">Ball</span></span></code>. </p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-BulbIntensityScale"><em class="property">Property </em><span class="sig-name descname">BulbIntensityScale</span><em class="property">: </em>Single</dt><dd><p>Multiplier for light source reflections on the ball. </p>
+<p>This defaults to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>An example use for this would be dampening light reflections while the ball is in the plunger lane, to emulate shadowing there. This assumes there is a timer object <code class="docutils literal notranslate"><span class="pre">PlungerShadowingTimer</span></code> with a low interval.</p>
+<p><div class="highlight-vbscript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">&#39; ======== MATH HELPERS ========</span><span class="w"></span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="c1">&#39; Linearly interpolates from A to B, depending on Alpha</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="c1">&#39;</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="c1">&#39; Examples:</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="c1">&#39; Alpha=0 returns A</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="c1">&#39; Alpha=1 returns B</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="c1">&#39; Alpha=0.5 retuns a halfway mix of A and B</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="c1">&#39; Alpha=2 returns a value beyond B</span><span class="w"></span>
+<span class="linenos">10</span><span class="kd">Function</span><span class="w"> </span><span class="nf">Lerp</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">Alpha</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">    </span><span class="n">Lerp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">((</span><span class="n">B</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">A</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Alpha</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">12</span><span class="k">End</span><span class="w"> </span><span class="k">Function</span><span class="w"></span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="c1">&#39; Clamps a value such that it is between Min and Max</span><span class="w"></span>
+<span class="linenos">15</span><span class="c1">&#39;</span><span class="w"></span>
+<span class="linenos">16</span><span class="c1">&#39; Val &lt; Min will return Min</span><span class="w"></span>
+<span class="linenos">17</span><span class="c1">&#39; Val &gt; Max will return Max</span><span class="w"></span>
+<span class="linenos">18</span><span class="c1">&#39; Min &lt; Val &lt; Max will return Val</span><span class="w"></span>
+<span class="linenos">19</span><span class="kd">Function</span><span class="w"> </span><span class="nf">Clamp</span><span class="p">(</span><span class="n">Val</span><span class="p">,</span><span class="w"> </span><span class="n">Min</span><span class="p">,</span><span class="w"> </span><span class="n">Max</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">20</span><span class="w">    </span><span class="k">If</span><span class="w"> </span><span class="n">Val</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Min</span><span class="w"> </span><span class="k">Then</span><span class="w"></span>
+<span class="linenos">21</span><span class="w">        </span><span class="n">Clamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Min</span><span class="w"></span>
+<span class="linenos">22</span><span class="w">    </span><span class="k">ElseIf</span><span class="w"> </span><span class="n">Val</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Max</span><span class="w"> </span><span class="k">Then</span><span class="w"></span>
+<span class="linenos">23</span><span class="w">        </span><span class="n">Clamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Max</span><span class="w"></span>
+<span class="linenos">24</span><span class="w">    </span><span class="k">Else</span><span class="w"></span>
+<span class="linenos">25</span><span class="w">        </span><span class="n">Clamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Val</span><span class="w"></span>
+<span class="linenos">26</span><span class="w">    </span><span class="k">End</span><span class="w"> </span><span class="k">If</span><span class="w"></span>
+<span class="linenos">27</span><span class="k">End</span><span class="w"> </span><span class="k">Function</span><span class="w"></span>
+<span class="linenos">28</span>
+<span class="linenos">29</span><span class="c1">&#39; ======== SHADOWING LOGIC ========</span><span class="w"></span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="c1">&#39; X position of the plunger lane, where the ball should not reflect light sources</span><span class="w"></span>
+<span class="linenos">32</span><span class="kd">Const</span><span class="w"> </span><span class="no">PLUNGER_LANE_X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">890</span><span class="w"></span>
+<span class="linenos">33</span>
+<span class="linenos">34</span><span class="c1">&#39; Width of the transition zone, where the bulb intensity will be interpolated between</span><span class="w"></span>
+<span class="linenos">35</span><span class="c1">&#39; PLUNGER_LANE_BULB_REFLECTION_INTENSITY and PLAYFIELD_BULB_REFLECTION_INTENSITY.</span><span class="w"></span>
+<span class="linenos">36</span><span class="c1">&#39; When the ball&#39;s X is &lt; `PLUNGER_SHADOW_TRANSITION_WIDTH - PLUNGER_LANE_X`, lights</span><span class="w"></span>
+<span class="linenos">37</span><span class="c1">&#39; will reflect with their full intensity.</span><span class="w"></span>
+<span class="linenos">38</span><span class="kd">Const</span><span class="w"> </span><span class="no">PLUNGER_SHADOW_TRANSITION_WIDTH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">35</span><span class="w"></span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="c1">&#39; Light reflection intensity on the ball when the ball is in the plunger lane</span><span class="w"></span>
+<span class="linenos">41</span><span class="kd">Const</span><span class="w"> </span><span class="no">PLUNGER_LANE_BULB_REFLECTION_INTENSITY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="linenos">42</span>
+<span class="linenos">43</span><span class="c1">&#39; Light reflection intensity on the ball when the ball is on the playfield</span><span class="w"></span>
+<span class="linenos">44</span><span class="kd">Const</span><span class="w"> </span><span class="no">PLAYFIELD_BULB_REFLECTION_INTENSITY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="linenos">45</span>
+<span class="linenos">46</span><span class="kd">Sub</span><span class="w"> </span><span class="nf">PlungerShadowingTimer_Timer</span><span class="p">()</span><span class="w"></span>
+<span class="linenos">47</span><span class="w">    </span><span class="kd">Dim</span><span class="w"> </span><span class="nv">Ball</span><span class="w"></span>
+<span class="linenos">48</span><span class="w">    </span><span class="k">For</span><span class="w"> </span><span class="k">Each</span><span class="w"> </span><span class="n">Ball</span><span class="w"> </span><span class="n">In</span><span class="w"> </span><span class="n">GetBalls</span><span class="w"></span>
+<span class="linenos">49</span><span class="w">        </span><span class="n">Ball</span><span class="p">.</span><span class="n">BulbIntensityScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Clamp</span><span class="p">(</span><span class="w"> </span><span class="n">_</span><span class="w"></span>
+<span class="linenos">50</span><span class="w">            </span><span class="n">Lerp</span><span class="p">(</span><span class="w"> </span><span class="n">_</span><span class="w"></span>
+<span class="linenos">51</span><span class="w">                </span><span class="n">PLUNGER_LANE_BULB_REFLECTION_INTENSITY</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="w"></span>
+<span class="linenos">52</span><span class="w">                </span><span class="n">PLAYFIELD_BULB_REFLECTION_INTENSITY</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="w"></span>
+<span class="linenos">53</span><span class="w">                </span><span class="p">(</span><span class="n">PLUNGER_LANE_X</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Ball</span><span class="p">.</span><span class="n">X</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">PLUNGER_SHADOW_TRANSITION_WIDTH</span><span class="w"> </span><span class="n">_</span><span class="w"></span>
+<span class="linenos">54</span><span class="w">            </span><span class="p">),</span><span class="w"> </span><span class="n">_</span><span class="w"></span>
+<span class="linenos">55</span><span class="w">            </span><span class="n">PLUNGER_LANE_BULB_REFLECTION_INTENSITY</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="w"></span>
+<span class="linenos">56</span><span class="w">            </span><span class="n">PLAYFIELD_BULB_REFLECTION_INTENSITY</span><span class="w"> </span><span class="n">_</span><span class="w"></span>
+<span class="linenos">57</span><span class="w">        </span><span class="p">)</span><span class="w"></span>
+<span class="linenos">58</span><span class="w">    </span><span class="k">Next</span><span class="w"></span>
+<span class="linenos">59</span><span class="k">End</span><span class="w"> </span><span class="k">Sub</span><span class="w"></span>
+</pre></div>
+</div>
+</p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-ReflectionEnabled"><em class="property">Property </em><span class="sig-name descname">ReflectionEnabled</span><em class="property">: </em>Boolean</dt><dd><p>Whether the ball should reflect onto the playfield. </p>
+<p>This defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>. </p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-PlayfieldReflectionScale"><em class="property">Property </em><span class="sig-name descname">PlayfieldReflectionScale</span><em class="property">: </em>Single</dt><dd><p>Multiplier for the playfield’s reflection on the ball. </p>
+<p>Higher values will make the playfield’s reflection on the ball more intense, lower values less intense.</p>
+<p>This defaults to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>TODO: Implement <span><p></p>
+</span><span><p>ITable::BallPlayfieldReflectionScale </p>
+</span></p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-ForceReflection"><em class="property">Property </em><span class="sig-name descname">ForceReflection</span><em class="property">: </em>Boolean</dt><dd><p>Whether the ball should reflect onto the playfield even when above it (such as on a ramp or upper playfield) </p>
+<p>This does not override <code class="docutils literal notranslate"><span class="pre">ReflectionEnabled</span></code> (ie: If <code class="docutils literal notranslate"><span class="pre">ReflectionEnabled</span> <span class="pre">=</span> <span class="pre">False</span></code> but <code class="docutils literal notranslate"><span class="pre">ForceReflection</span> <span class="pre">=</span> <span class="pre">True</span></code>, the reflection will not be visible).</p>
+<p>This defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>. </p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="vbs-Ball-Visible"><em class="property">Property </em><span class="sig-name descname">Visible</span><em class="property">: </em>Boolean</dt><dd><p>Whether the ball is visible. </p>
+<p>Hidden balls keep simulating (fall due to gravity, can be affected by flippers, etc.), but just aren’t rendered.</p>
+<p>This defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>. </p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="vbs-Ball-DestroyBall"><em class="property">Function </em><span class="sig-name descname">DestroyBall</span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"></span></span>Integer</dt><dd><p>Destroys the table’s active ball. </p>
+<p>Note that this destroy’s the <span>active</span> ball, which is not necessary the ball that you invoke this function on.</p>
+<p><strong>Returns:</strong><span><p>Number of balls destroyed (should always be <code class="docutils literal notranslate"><span class="pre">1</span></code>) </p>
+</span></p>
+</dd>
+</dl>
+</dd>
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Ball</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#api-reference">API reference</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="rubber.html"
+                        title="previous chapter">Rubber</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="collection.html"
+                        title="next chapter">Collection</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/ball.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../vbs-apiindex.html" title="API Index"
+             >api</a> |</li>
+        <li class="right" >
+          <a href="collection.html" title="Collection"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="rubber.html" title="Rubber"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Visual Pinball  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Scripting API</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Ball</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Visual Pinball development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>

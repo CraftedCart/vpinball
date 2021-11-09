@@ -739,14 +739,49 @@ typedef [uuid(D09B9F0E-C1AE-40dd-84D6-B1F74053AA8E)]
                 [propget, id(34), helpstring("property ExitGame")] HRESULT ExitGame([out, retval] long *pVal);
                 [propget, id(803), helpstring("property LockbarKey")] HRESULT LockbarKey([out, retval] long *pVal);
                 [id(33), helpstring("method FireKnocker")] HRESULT FireKnocker([defaultvalue(1)] int Count);
+
+                /**
+                 * @brief Quits the player
+                 *
+                 * @param CloseType Optional: defaults to `0` if not given
+                 *                - `0` = Exit player (and also quit Visual Pinball if it started minimized)
+                 *                - `1` = Quit Visual Pinball
+                 *                - `2` = Quit Visual Pinball immediately without fully cleaning up
+                 *                - Passing any other number will quit Visual Pinball
+                 */
                 [id(37), helpstring("method QuitPlayer")] HRESULT QuitPlayer([defaultvalue(0)] int CloseType);
 
+                /**
+                 * @brief Whether the table is in @term{DT} (desktop) mode
+                 */
                 [propget, id(13434), helpstring("property ShowDT")] HRESULT ShowDT([out, retval] VARIANT_BOOL *pVal);
+
+                /**
+                 * @brief Whether the table is in @term{FSS} (full single screen) mode
+                 */
                 [propget, id(625), helpstring("property ShowFSS")] HRESULT ShowFSS([out, retval] VARIANT_BOOL *pVal);
 
                 [propget, id(436), helpstring("property NightDay")] HRESULT NightDay([out, retval] int *pVal);
 
+                /**
+                 * @brief Returns an array of all balls
+                 *
+                 * Example setting all balls on the table to red:
+                 * @code
+                 * Dim Ball
+                 * For Each Ball In GetBalls
+                 *     Ball.Color = &HFF0000
+                 * Next
+                 * @endcode
+                 *
+                 * @return Array of all balls
+                 *
+                 * @see Ball
+                 *
+                 * TODO: Implement see command
+                 */
                 [id(41), helpstring("method GetBalls")] HRESULT GetBalls([out, retval] SAFEARRAY(VARIANT) *pVal);
+
                 [id(42), helpstring("method GetElements")] HRESULT GetElements([out, retval] SAFEARRAY(VARIANT) *pVal);
                 [id(43), helpstring("method GetElementByName")] HRESULT GetElementByName([in] BSTR name, [out, retval] IDispatch* *pVal);
                 [propget, id(48), helpstring("property ActiveTable")] HRESULT ActiveTable([out, retval] ITable **pVal);
@@ -762,10 +797,18 @@ typedef [uuid(D09B9F0E-C1AE-40dd-84D6-B1F74053AA8E)]
                 [propget, id(40), helpstring("property VersionRevision")] HRESULT VersionRevision([out, retval] int *pVal);
                 [propget, id(24), helpstring("property VPBuildVersion")] HRESULT VPBuildVersion([out, retval] int *pVal);
 
+                /**
+                 * @since 10.6
+                 */
                 [id(230), helpstring("method UpdateMaterial")] HRESULT UpdateMaterial([in] BSTR pVal, [in] float wrapLighting, [in] float roughness, [in] float glossyImageLerp, [in] float thickness, [in] float edge, [in] float edgeAlpha, [in] float opacity,
                     [in] OLE_COLOR base, [in] OLE_COLOR glossy, [in] OLE_COLOR clearcoat, [in] VARIANT_BOOL isMetal, [in] VARIANT_BOOL opacityActive,
                     [in] float elasticity, [in] float elasticityFalloff, [in] float friction, [in] float scatterAngle);
+
+                /**
+                 * @since 10.7
+                 */
                 [id(231), helpstring("method GetMaterial")] HRESULT GetMaterial([in] BSTR pVal, [out] float *wrapLighting, [out] float *roughness, [out] float *glossyImageLerp, [out] float *thickness, [out] float *edge, [out] float *edgeAlpha, [out] float *opacity,
+
                     [out] OLE_COLOR *base, [out] OLE_COLOR *glossy, [out] OLE_COLOR *clearcoat, [out] VARIANT_BOOL *isMetal, [out] VARIANT_BOOL *opacityActive,
                     [out] float *elasticity, [out] float *elasticityFalloff, [out] float *friction, [out] float *scatterAngle);
                 [id(247), helpstring("method UpdateMaterialPhysics")] HRESULT UpdateMaterialPhysics([in] BSTR pVal,
@@ -774,7 +817,14 @@ typedef [uuid(D09B9F0E-C1AE-40dd-84D6-B1F74053AA8E)]
                     [out] float *elasticity, [out] float *elasticityFalloff, [out] float *friction, [out] float *scatterAngle);
                 [id(224), helpstring("method MaterialColor")] HRESULT MaterialColor([in] BSTR name, [in] OLE_COLOR newVal);
 
+                /**
+                 * @since 10.4
+                 */
                 [propget, id(226), helpstring("property WindowWidth")] HRESULT WindowWidth([out, retval] int *pVal);
+
+                /**
+                 * @since 10.4
+                 */
                 [propget, id(227), helpstring("property WindowHeight")] HRESULT WindowHeight([out, retval] int *pVal);
         }
 
@@ -1492,12 +1542,46 @@ typedef [uuid(D09B9F0E-C1AE-40dd-84D6-B1F74053AA8E)]
                 [id(1), helpstring("method CreateBall")] HRESULT CreateBall([out, retval] IBall **Ball);
                 [id(11), helpstring("method CreateSizedBall")] HRESULT CreateSizedBall([in] float radius, [out, retval] IBall **Ball);
                 [id(444), helpstring("method CreateSizedBallWithMass")] HRESULT CreateSizedBallWithMass([in] float radius, [in] float mass, [out, retval] IBall **Ball);
+
+                /**
+                 * @brief Destorys the ball captured by the kicker
+                 *
+                 * This has no effect if the kicker hasn't captured any ball
+                 *
+                 * Example of a kicker being used to implement a drain:
+                 * @code
+                 * Sub DrainKicker_Hit()
+                 *     DrainKicker.DestroyBall
+                 *     ' You may also want to play a sound effect, update a "balls in play" counter, spawn a new ball,
+                 *     ' etc.
+                 * End Sub
+                 * @endcode
+                 *
+                 * @return Number of balls destroyed (`0` or `1`)
+                 */
                 [id(2), helpstring("method DestroyBall")] HRESULT DestroyBall([out, retval] int *pVal);
+
                 [propget, id(DISPID_Timer_Enabled), helpstring("property TimerEnabled")] HRESULT TimerEnabled([out, retval] VARIANT_BOOL *pVal);
                 [propput, id(DISPID_Timer_Enabled), helpstring("property TimerEnabled")] HRESULT TimerEnabled([in] VARIANT_BOOL newVal);
                 [propget, id(DISPID_Timer_Interval), helpstring("property TimerInterval")] HRESULT TimerInterval([out, retval] long *pVal);
                 [propput, id(DISPID_Timer_Interval), helpstring("property TimerInterval")] HRESULT TimerInterval([in] long newVal);
+
+                /**
+                 * @brief Impart a force on the captured ball
+                 *
+                 * This has no effect if the kicker hasn't captured any ball
+                 *
+                 * @param angle Angle to kick the ball out at, in degrees
+                 *            - `0` is towards the back of the table
+                 *            - `90` is towards the right
+                 *            - `180` is towards the front of the table
+                 *            - `270` is towards the left
+                 * @param speed The speed to kick out at
+                 * @param inclination Optional: defaults to `0` if not given
+                 *                  - TODO: Figure out what this does
+                 */
                 [id(5), helpstring("method Kick")] HRESULT Kick(float angle, float speed, [defaultvalue(0)] float inclination);
+
                 [id(310), helpstring("method KickXYZ")] HRESULT KickXYZ(float angle, float speed, float inclination, float x, float y, float z);
                 [id(311), helpstring("method KickZ")] HRESULT KickZ(float angle, float speed, float inclination, float heightz);
                 [propget, id(DISPID_X), helpstring("property X")] HRESULT X([out, retval] float *pVal);
@@ -1512,8 +1596,16 @@ typedef [uuid(D09B9F0E-C1AE-40dd-84D6-B1F74053AA8E)]
                 [propput, id(340), helpstring("property Material")] HRESULT Material([in] BSTR newVal);
                 [propget, id(DISPID_Surface), helpstring("property Surface")] HRESULT Surface([out, retval] BSTR *pVal);
                 [propput, id(DISPID_Surface), helpstring("property Surface")] HRESULT Surface([in] BSTR newVal);
+
+                /**
+                 * @brief Variable that scripts can store arbitrary values in
+                 *
+                 * This variable is not read from or written to by Visual Pinball, it only exists for scripts to store
+                 * their own data in.
+                 */
                 [propget, id(DISPID_UserValue), helpstring("property User")] HRESULT UserValue([out, retval] VARIANT* pVal);
                 [propput, id(DISPID_UserValue), helpstring("property User")] HRESULT UserValue([in] VARIANT* newVal);
+
                 [id(312), helpstring("method BallCntOver")] HRESULT BallCntOver([out, retval] int *pVal);
                 [propget, id(115), helpstring("property Scatter")] HRESULT Scatter([out, retval] float *pVal);
                 [propput, id(115), helpstring("property Scatter")] HRESULT Scatter([in] float newVal);
@@ -2251,59 +2343,305 @@ typedef [uuid(D09B9F0E-C1AE-40dd-84D6-B1F74053AA8E)]
         ]
         interface IBall : IDispatch
         {
+                /** @brief X position of the ball's center */
                 [propget, id(1), helpstring("property X")] HRESULT X([out, retval] float *pVal);
                 [propput, id(1), helpstring("property X")] HRESULT X([in] float newVal);
+
+                /** @brief Y position of the ball's center */
                 [propget, id(2), helpstring("property Y")] HRESULT Y([out, retval] float *pVal);
                 [propput, id(2), helpstring("property Y")] HRESULT Y([in] float newVal);
+
+                /** @brief X velocity of the ball, in VP units per 10ms */
                 [propget, id(3), helpstring("property VelX")] HRESULT VelX([out, retval] float *pVal);
                 [propput, id(3), helpstring("property VelX")] HRESULT VelX([in] float newVal);
+
+                /** @brief Y velocity of the ball, in VP units per 10ms */
                 [propget, id(4), helpstring("property VelY")] HRESULT VelY([out, retval] float *pVal);
                 [propput, id(4), helpstring("property VelY")] HRESULT VelY([in] float newVal);
+
+                /** @brief Z position of the ball's center */
                 [propget, id(5), helpstring("property Z")] HRESULT Z([out, retval] float *pVal);
                 [propput, id(5), helpstring("property Z")] HRESULT Z([in] float newVal);
+
+                /** @brief Z velocity of the ball, in VP units per 10ms */
                 [propget, id(6), helpstring("property VelZ")] HRESULT VelZ([out, retval] float *pVal);
                 [propput, id(6), helpstring("property VelZ")] HRESULT VelZ([in] float newVal);
+
+                /**
+                 * @brief X angular velocity of the ball
+                 *
+                 * Writing to this variable has no effect (and never did in the past), it's only possible for legacy
+                 * compatability.
+                 *
+                 * @since 10.4
+                 */
                 [propget, id(14), helpstring("property AngVelX")] HRESULT AngVelX([out, retval] float *pVal);
                 [propput, id(14), helpstring("property AngVelX")] HRESULT AngVelX([in] float newVal);
+
+                /**
+                 * @brief Y angular velocity of the ball
+                 *
+                 * Writing to this variable has no effect (and never did in the past), it's only possible for legacy
+                 * compatability.
+                 *
+                 * @since 10.4
+                 */
                 [propget, id(15), helpstring("property AngVelY")] HRESULT AngVelY([out, retval] float* pVal);
                 [propput, id(15), helpstring("property AngVelY")] HRESULT AngVelY([in] float newVal);
+
+                /**
+                 * @brief Z angular velocity of the ball
+                 *
+                 * Writing to this variable has no effect (and never did in the past), it's only possible for legacy
+                 * compatability.
+                 *
+                 * @since 10.4
+                 */
                 [propget, id(16), helpstring("property AngVelZ")] HRESULT AngVelZ([out, retval] float* pVal);
                 [propput, id(16), helpstring("property AngVelZ")] HRESULT AngVelZ([in] float newVal);
+
+                /**
+                 * @brief X angular momentum of the ball
+                 *
+                 * @since 10.4
+                 */
                 [propget, id(17), helpstring("property AngMomX")] HRESULT AngMomX([out, retval] float* pVal);
                 [propput, id(17), helpstring("property AngMomX")] HRESULT AngMomX([in] float newVal);
+
+                /**
+                 * @brief Y angular momentum of the ball
+                 *
+                 * @since 10.4
+                 */
                 [propget, id(18), helpstring("property AngMomY")] HRESULT AngMomY([out, retval] float *pVal);
                 [propput, id(18), helpstring("property AngMomY")] HRESULT AngMomY([in] float newVal);
+
+                /**
+                 * @brief Z angular momentum of the ball
+                 *
+                 * @since 10.4
+                 */
                 [propget, id(19), helpstring("property AngMomZ")] HRESULT AngMomZ([out, retval] float *pVal);
                 [propput, id(19), helpstring("property AngMomZ")] HRESULT AngMomZ([in] float newVal);
 
+                /**
+                 * @brief Color tint for the ball
+                 *
+                 * This defaults to `&HFFFFFF` (pure white - `&H` in Visual Basic is the prefix for a hexadecimal
+                 * number).
+                 *
+                 * Example for creating a magenta ball:
+                 * @code
+                 * With BallRelease.CreateBall
+                 *     .Color = &HFF00FF
+                 * End With
+                 * @endcode
+                 *
+                 * To convert a color into a format usable with `OLE_COLOR`, simply convert it into a hex code and
+                 * prefix it with `&H`.
+                 */
                 [propget, id(7), helpstring("property Color")] HRESULT Color([out, retval] OLE_COLOR *pVal);
                 [propput, id(7), helpstring("property Color")] HRESULT Color([in] OLE_COLOR newVal);
+
+                /**
+                 * @brief Name of a texture on the ball that faces the camera
+                 *
+                 * This is often an image of a sphere reflecting the room around it.
+                 *
+                 * Images can be imported/manipulated in the Table > Image Manager dialog.
+                 */
                 [propget, id(8), helpstring("property Image")] HRESULT Image([out, retval] BSTR *pVal);
                 [propput, id(8), helpstring("property Image")] HRESULT Image([in] BSTR newVal);
+
+                /**
+                 * @brief Name of a texture on top of the ball's `Image`
+                 *
+                 * Unlike `Image`, the decal spins with the ball.
+                 *
+                 * The default blank table has a scratches decal on the ball.
+                 *
+                 * Images can be imported/manipulated in the Table > Image Manager dialog.
+                 */
                 [propget, id(9), helpstring("property FrontDecal")] HRESULT FrontDecal([out, retval] BSTR *pVal);
                 [propput, id(9), helpstring("property FrontDecal")] HRESULT FrontDecal([in] BSTR newVal);
+
+                /**
+                 * @brief Whether the decal should be in "logo mode"
+                 *
+                 * The default mode for newly created balls can be set with the "Logo mode" checkbox in the table
+                 * options.
+                 *
+                 * @since 10.4
+                 */
                 [propget, id(497), helpstring("property DecalMode")] HRESULT DecalMode([out, retval] VARIANT_BOOL *pVal);
                 [propput, id(497), helpstring("property DecalMode")] HRESULT DecalMode([in] VARIANT_BOOL newVal);
+
+                /**
+                 * @brief Variable that scripts can store arbitrary values in
+                 *
+                 * This variable is not read from or written to by Visual Pinball, it only exists for scripts to store
+                 * their own data in.
+                 */
                 [propget, id(DISPID_UserValue), helpstring("property User")] HRESULT UserValue([out, retval] VARIANT* pVal);
                 [propput, id(DISPID_UserValue), helpstring("property User")] HRESULT UserValue([in] VARIANT* newVal);
+
+                /**
+                 * @brief Mass of the ball
+                 *
+                 * This defaults to `1`.
+                 */
                 [propget, id(11), helpstring("property Mass")] HRESULT Mass([out, retval] float *pVal);
                 [propput, id(11), helpstring("property Mass")] HRESULT Mass([in] float newVal);
+
+                /** @brief The radius of the ball. This is usually `25`. */
                 [propget, id(12), helpstring("property Radius")] HRESULT Radius([out, retval] float *pVal);
                 [propput, id(12), helpstring("property Radius")] HRESULT Radius([in] float newVal);
+
+                /**
+                 * @brief ID of the ball
+                 *
+                 * Visual Pinball generates a unique ID every time a ball is created. While IDs are generally intended
+                 * to be unique across balls, it is possible to set multiple balls to have the same ID from a script.
+                 */
                 [propget, id(13), helpstring("property ID")] HRESULT ID([out, retval] int *pVal);
                 [propput, id(13), helpstring("property ID")] HRESULT ID([in] int newVal);
+
+                /**
+                 * @brief Name of the ball
+                 *
+                 * This defaults to `Ball`.
+                 */
                 [propget, id(DISPID_Name), helpstring("property Name")] HRESULT Name([out, retval] BSTR *pVal);
                 [propput, id(DISPID_Name), helpstring("property Name")] HRESULT Name([in] BSTR newVal);
+
+                /**
+                 * @brief Multiplier for light source reflections on the ball
+                 *
+                 * This defaults to `1`.
+                 *
+                 * An example use for this would be dampening light reflections while the ball is in the plunger lane,
+                 * to emulate shadowing there. This assumes there is a timer object `PlungerShadowingTimer` with a low
+                 * interval.
+                 *
+                 * @code
+                 * ' ======== MATH HELPERS ========
+                 *
+                 * ' Linearly interpolates from A to B, depending on Alpha
+                 * '
+                 * ' Examples:
+                 * ' Alpha=0 returns A
+                 * ' Alpha=1 returns B
+                 * ' Alpha=0.5 retuns a halfway mix of A and B
+                 * ' Alpha=2 returns a value beyond B
+                 * Function Lerp(A, B, Alpha)
+                 *     Lerp = A + ((B - A) * Alpha)
+                 * End Function
+                 *
+                 * ' Clamps a value such that it is between Min and Max
+                 * '
+                 * ' Val < Min will return Min
+                 * ' Val > Max will return Max
+                 * ' Min < Val < Max will return Val
+                 * Function Clamp(Val, Min, Max)
+                 *     If Val < Min Then
+                 *         Clamp = Min
+                 *     ElseIf Val > Max Then
+                 *         Clamp = Max
+                 *     Else
+                 *         Clamp = Val
+                 *     End If
+                 * End Function
+                 *
+                 * ' ======== SHADOWING LOGIC ========
+                 *
+                 * ' X position of the plunger lane, where the ball should not reflect light sources
+                 * Const PLUNGER_LANE_X = 890
+                 *
+                 * ' Width of the transition zone, where the bulb intensity will be interpolated between
+                 * ' PLUNGER_LANE_BULB_REFLECTION_INTENSITY and PLAYFIELD_BULB_REFLECTION_INTENSITY.
+                 * ' When the ball's X is < `PLUNGER_SHADOW_TRANSITION_WIDTH - PLUNGER_LANE_X`, lights
+                 * ' will reflect with their full intensity.
+                 * Const PLUNGER_SHADOW_TRANSITION_WIDTH = 35
+                 *
+                 * ' Light reflection intensity on the ball when the ball is in the plunger lane
+                 * Const PLUNGER_LANE_BULB_REFLECTION_INTENSITY = 0
+                 *
+                 * ' Light reflection intensity on the ball when the ball is on the playfield
+                 * Const PLAYFIELD_BULB_REFLECTION_INTENSITY = 1
+                 *
+                 * Sub PlungerShadowingTimer_Timer()
+                 *     Dim Ball
+                 *     For Each Ball In GetBalls
+                 *         Ball.BulbIntensityScale = Clamp( _
+                 *             Lerp( _
+                 *                 PLUNGER_LANE_BULB_REFLECTION_INTENSITY, _
+                 *                 PLAYFIELD_BULB_REFLECTION_INTENSITY, _
+                 *                 (PLUNGER_LANE_X - Ball.X) / PLUNGER_SHADOW_TRANSITION_WIDTH _
+                 *             ), _
+                 *             PLUNGER_LANE_BULB_REFLECTION_INTENSITY, _
+                 *             PLAYFIELD_BULB_REFLECTION_INTENSITY _
+                 *         )
+                 *     Next
+                 * End Sub
+                 * @endcode
+                 */
                 [propget, id(451), helpstring("property BulbIntensityScale")] HRESULT BulbIntensityScale([out, retval] float *pVal);
                 [propput, id(451), helpstring("property BulbIntensityScale")] HRESULT BulbIntensityScale([in] float newVal);
+
+                /**
+                 * @brief Whether the ball should reflect onto the playfield
+                 *
+                 * This defaults to `True`.
+                 */
                 [propget, id(484), helpstring("property ReflectionEnabled")] HRESULT ReflectionEnabled([out, retval] VARIANT_BOOL *pVal);
                 [propput, id(484), helpstring("property ReflectionEnabled")] HRESULT ReflectionEnabled([in] VARIANT_BOOL newVal);
+
+                /**
+                 * @brief Multiplier for the playfield's reflection on the ball
+                 *
+                 * Higher values will make the playfield's reflection on the ball more intense, lower values less
+                 * intense.
+                 *
+                 * This defaults to `1`.
+                 *
+                 * TODO: Implement @see
+                 *
+                 * @see ITable::BallPlayfieldReflectionScale
+                 */
                 [propget, id(485), helpstring("property PlayfieldReflectionScale")] HRESULT PlayfieldReflectionScale([out, retval] float *pVal);
                 [propput, id(485), helpstring("property PlayfieldReflectionScale")] HRESULT PlayfieldReflectionScale([in] float newVal);
+
+                /**
+                 * @brief Whether the ball should reflect onto the playfield even when above it (such as on a
+                 *        ramp or upper playfield)
+                 *
+                 * This does not override `ReflectionEnabled` (ie: If `ReflectionEnabled = False` but `ForceReflection =
+                 * True`, the reflection will not be visible).
+                 *
+                 * This defaults to `False`.
+                 */
                 [propget, id(486), helpstring("property ForceReflection")] HRESULT ForceReflection([out, retval] VARIANT_BOOL *pVal);
                 [propput, id(486), helpstring("property ForceReflection")] HRESULT ForceReflection([in] VARIANT_BOOL newVal);
+
+                /**
+                 * @brief Whether the ball is visible
+                 *
+                 * Hidden balls keep simulating (fall due to gravity, can be affected by flippers, etc.), but just
+                 * aren't rendered.
+                 *
+                 * This defaults to `True`.
+                 */
                 [propget, id(487), helpstring("property Visible")] HRESULT Visible([out, retval] VARIANT_BOOL *pVal);
                 [propput, id(487), helpstring("property Visible")] HRESULT Visible([in] VARIANT_BOOL newVal);
+
+                /**
+                 * @brief Destroys the table's active ball
+                 *
+                 * Note that this destroy's the *active* ball, which is not necessary the ball that you invoke this
+                 * function on.
+                 *
+                 * @return Number of balls destroyed (should always be `1`)
+                 */
                 [id(100), helpstring("method DestroyBall")] HRESULT DestroyBall([out, retval] int *pVal);
         };
 

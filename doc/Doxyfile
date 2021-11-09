@@ -1,0 +1,21 @@
+INPUT = ../vpinball.idl
+
+# Disable default generators
+GENERATE_HTML = NO
+GENERATE_LATEX = NO
+
+# Generate XML for Sphinx to consume
+GENERATE_XML = YES
+XML_OUTPUT = doxygen_xml
+
+# Use the same build dir as sphinx
+OUTPUT_DIRECTORY = build
+
+# Some custom commands to generate custom XML tags
+# The custom XML tags will be picked up by the doxygen_vpinball Sphinx extension to be transformed into various
+# doxutils/sphinx nodes
+# Here I'm using the convention that custom XML tags begin with `x-` (for eXtension)
+
+# @term - Link to a definition (akin to the :term: role in Sphinx)
+# Eg: @term{DT} to link to the glossary for DT
+ALIASES += term{1}="@xmlonly<x-term>@endxmlonly\1@xmlonly</x-term>@endxmlonly"
